@@ -1,6 +1,12 @@
 const form = document.getElementById("generate-form");
 const qr = document.getElementById("qrcode");
 
+function clearQr() {
+  qr.innerHTML = "";
+  const saveLink = document.getElementById("save-link");
+  if (saveLink) saveLink.remove();
+}
+
 function onCodeGenerateSubmit(e) {
   e.preventDefault();
 
@@ -38,12 +44,6 @@ function showSpinner() {
 }
 function hideSpinner() {
   document.getElementById("spinner").style.display = "none";
-}
-
-function clearQr() {
-  qr.innerHTML = "";
-  const saveLink = document.getElementById("sav -link");
-  if (saveLink) saveLink.remove();
 }
 
 function createSaveBtn(saveUrl) {
